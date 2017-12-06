@@ -38,12 +38,10 @@ public class ForcedCards {
             readFileNum[j] = Integer.parseInt(readFile[j]);
         }
 
-        for(int j = 0; j < answer.length; j++)
+        for(int i = 0; i < maxIndx; i++)
         {
-            System.out.println(answer[j]);
+
         }
-
-
 
 		/* End */
 
