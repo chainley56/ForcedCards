@@ -35,12 +35,32 @@ public class ForcedCards {
 
         for(int j = 0; j < maxIndx; j++)
         {
+            if(j == 9)
+            {
+                readFileNum[9] = 0;
+                j++;
+            }
             readFileNum[j] = Integer.parseInt(readFile[j]);
         }
 
         for(int i = 0; i < maxIndx; i++)
         {
-
+            if(readFileNum[i] >= 0)
+            {
+                totalValue += readFileNum[i];
+            }
+            else if(readFileNum[i] < 0)
+            {
+                if(readFileNum[i] + readFileNum[i + 1] > 0)
+                {
+                    totalValue += readFileNum[i];
+                }
+                else if(readFileNum[i] + readFileNum[i + 1] <= 0)
+                {
+                    endPoint = i;
+                    break;
+                }
+            }
         }
 
 		/* End */
@@ -53,7 +73,7 @@ public class ForcedCards {
 	}
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 
 		int numOfTestCases = sc.nextInt();
@@ -77,4 +97,3 @@ public class ForcedCards {
 		sc.close();
 	}
 }
-
