@@ -42,17 +42,6 @@ public class TryTest  {
                 e.printStackTrace();
             }
         }
-
-
-        int [] test = {3, 6, 77, -31, 5, 2};
-        ForcedCards act = new ForcedCards();
-        act.bestPlay(test);
-        for(int k = 0; k <= 5; k++)
-        {
-            System.out.println(test[k]);
-        }
-        System.out.println("Start/Stop/Value: 0/2/86");
-        System.out.println("***** TEST ACT passed!");
     }
 
     public static String tryTest(String testName) {
