@@ -5,8 +5,8 @@ import java.io.*;
 
 public class ForcedCards {
 
-	private static int[] bestPlay(int[] deck) throws IOException {
-		int[] answer = new int[3];
+	public static int[] bestPlay(int[] deck) throws IOException {
+		int [] answer = new int[3];
 
         int startPoint = 0;
         int endPoint = 0;
@@ -35,12 +35,14 @@ public class ForcedCards {
 
         for(int j = 0; j < maxIndx; j++)
         {
-            if(j == 9)
+            if(readFile[j].equals(""))
             {
-                readFileNum[9] = 0;
-                j++;
+                readFileNum[j] = 0;
             }
-            readFileNum[j] = Integer.parseInt(readFile[j]);
+            else
+            {
+                readFileNum[j] = Integer.parseInt(readFile[j]);
+            }
         }
 
         for(int i = 0; i < maxIndx; i++)
@@ -73,8 +75,12 @@ public class ForcedCards {
 	}
 
 
+
 	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
+
+
+
+        Scanner sc = new Scanner(System.in);
 
 		int numOfTestCases = sc.nextInt();
 
@@ -95,5 +101,5 @@ public class ForcedCards {
 		}
 
 		sc.close();
-	}
+    }
 }
